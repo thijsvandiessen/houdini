@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Setting the stage</title>
+    <style>
+      .thing {
+        --my-color: green;
+        background-color: var(--my-color);
+
+        width: 100vh;
+        height: 100vw;
+      }
+
+      .thing:hover {
+        --my-color: url("not-a-color");
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="thing"></div>
+    </section>
+  </body>
+</html>

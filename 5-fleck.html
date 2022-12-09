@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      @property --fleck-colors {
+        syntax: "<color>+";
+        initial-value: black white;
+        inherits: true;
+      }
+
+      @property --fleck-seed {
+        syntax: "<integer>";
+        initial-value: 1;
+        inherits: true;
+      }
+
+      @property --fleck-cell-size {
+        syntax: "<integer>";
+        initial-value: 300;
+        inherits: true;
+      }
+
+      @property --fleck-density {
+        syntax: "<integer>";
+        initial-value: 300;
+        inherits: true;
+      }
+
+      @property --fleck-size-base {
+        syntax: "<length>";
+        initial-value: 4px;
+        inherits: true;
+      }
+
+      #demo {
+        width: 80vw;
+        height: 80vh;
+        background-color: #38bfc9;
+        background-image: paint(fleck);
+        resize: both;
+        overflow: hidden;
+        --fleck-colors: #0193c1 #74d8e6 #0bc0e0 #3ddaf5 #e2f9fe #02313f;
+      }
+    </style>
+
+    <script type="module">
+      CSS.paintWorklet.addModule("./paintWorklets/flecks.js");
+    </script>
+  </head>
+  <body>
+    <div id="demo"></div>
+  </body>
+</html>

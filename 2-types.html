@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS TYPED OM</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+      }
+
+      button {
+        --button-background-color: url("test-value");
+        transition: --button-background-color 1s;
+        background-color: var(--button-background-color);
+
+        /* some default styling */
+        color: white;
+        margin: 3rem;
+        padding: 10rem 20rem;
+        border: none;
+
+        font-size: 4em;
+      }
+
+      button:hover {
+        --button-background-color: hsl(120, 80%, 40%);
+      }
+    </style>
+
+    <script type="module">
+      CSS.registerProperty({
+        name: "--button-background-color",
+        syntax: "<color>",
+        inherits: false,
+        initialValue: "blue",
+      });
+    </script>
+  </head>
+  <body>
+    <button type="button">Button</button>
+  </body>
+</html>

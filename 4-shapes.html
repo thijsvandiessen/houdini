@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      #shapes {
+        --shapes-color: #ff0000;
+        background-image: paint(shapes);
+
+        width: 35rem;
+        height: 35rem;
+      }
+    </style>
+
+    <script type="module">
+      CSS.paintWorklet.addModule("./paintWorklets/shapes.js");
+    </script>
+  </head>
+  <body>
+    <div id="shapes"></div>
+  </body>
+</html>

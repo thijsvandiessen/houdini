@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      #circle {
+        --circle-color: #ff0000;
+        background-image: paint(circle);
+
+        width: 30rem;
+        height: 30rem;
+      }
+    </style>
+
+    <script type="module">
+      CSS.paintWorklet.addModule("./paintWorklets/circle.js");
+    </script>
+  </head>
+  <body>
+    <div id="circle"></div>
+  </body>
+</html>
